@@ -22,6 +22,22 @@ def get_secret_number():
     return number
 
 
+def input_check(value: str):
+    correct_values = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+
+    if len(value) != 3:
+        return False
+
+    for i in value:
+        if i not in correct_values:
+            return False
+
+    if value[0] == '0':
+        return False
+
+    return True
+
+
 def main():
     show_info()
 
