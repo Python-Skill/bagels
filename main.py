@@ -38,6 +38,21 @@ def input_check(value: str):
     return True
 
 
+def get_hints(secret_number: str, value: str):
+    hints = []
+
+    for i in range(0, len(value)):
+        if value[i] == secret_number[i]:
+            hints.append("Fermi")
+        elif value[i] in secret_number:
+            hints.append("Pico")
+
+    if len(hints) == 0:
+        hints.append("Bagles")
+
+    return hints
+
+
 def main():
     show_info()
 
