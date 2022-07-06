@@ -3,7 +3,7 @@
 
 from random import randint
 
-
+# функция вывода информации об игре
 def show_info():
     print(
         "Бейглз – дедуктивная логическая игра.",
@@ -17,11 +17,13 @@ def show_info():
         "\nУ Вас есть 10 попыток, чтобы угадать загаданное число!", sep="\n")
 
 
+# функция генерации случайного 3-значного числа
 def get_secret_number():
     number = str(randint(1, 9)) + str(randint(0, 9)) + str(randint(0, 9))
     return number
 
 
+# функция проверки валидности ввода от пользователя
 def input_check(value: str):
     correct_values = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 
@@ -38,6 +40,7 @@ def input_check(value: str):
     return True
 
 
+# функция ответа программы подсказками
 def get_hints(secret_number: str, value: str):
     hints = []
 
@@ -53,6 +56,7 @@ def get_hints(secret_number: str, value: str):
     return hints
 
 
+# главная функция, содержащая игровой цикл
 def main():
     show_info()
 
